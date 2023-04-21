@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+  mail:
+    host: smtp.qq.com
+    username: 1574351429@qq.com
+    password: lvwanxjhhoqwfjje
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      id-type: auto
+      table-prefix: tb_
+
+server:
+  port: 9090

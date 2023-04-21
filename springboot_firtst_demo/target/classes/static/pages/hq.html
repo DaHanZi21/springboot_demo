@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>黄桥牛逼</title>
+</head>
+<body>
+<div id="app">
+<form action="" method="get">
+    用户名：<input v-model="msg" type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    <input type="submit">
+</form>
+    {{msg}}
+</div>
+</body>
+<!-- 引入组件库 -->
+<script src="../js/vue.js"></script>
+
+<script>
+    var vue = new vue({
+        el : '#app',
+        data:{
+            msg:"helloword"
+        },
+        method:{
+
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background-image: url(../img/palyer.jpg);
+        }
+
+        #modify {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            padding-top: 50px;
+            position: relative;
+            left: 1200px;
+            top: 200px;
+        }
+
+        #input1 {
+
+        }
+
+        #input1, #input2, #input4, #input5 {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        a {
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        #input3 {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        #tb {
+            margin: auto;
+
+        }
+
+        input {
+            width: 100%;
+        }
+
+        tr, td {
+            height: 20px;
+        }
+
+        #h1 {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="modify">
+    <form action="/modify" method="post">
+        <table id="tb" border="0" width="80%">
+            <tr>
+                <td colspan="2"><h1 id="h1">修改</h1></td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="input1" name="username" type="text" placeholder="账号"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="input2" name="password" type="text" placeholder="密码"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="input4" name="email" type="email" placeholder="QQ邮箱"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="input5" name="code" type="text" placeholder="验证码"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#" onclick="sendMail()" id="sendCode" style="float: left">点击发送验证码</a>
+                    <a id="a1" href="login.html" style="float: right;">立即登录</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="input3" type="submit" value="修改"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/axios-0.18.0.js"></script>
+<script>
+    sendCodeLink = document.getElementById("sendCode");
+
+    function sendMail() {
+        email = document.getElementById("input4");
+        let value = email.value;
+       axios.get("/sendmail/"+value).then(res =>{
+           console.log(res.data)
+       })
+    }
+</script>
+</html>
